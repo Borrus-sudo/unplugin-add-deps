@@ -10,6 +10,7 @@
 ## 🎩 Features
 - Available as a ready to use vite, rollup, esbuild, webpack or a babel plugin!
 - Constructs [] hooks at build time automatically!
+
 ## 🎉 Contributing
 Contributions are welcome! Whether it is a small documentation change or a breaking feature, we welcome it!
 
