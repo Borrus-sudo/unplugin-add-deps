@@ -2,8 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.17.10
-  '@babel/parser': ^7.17.10
-  '@babel/plugin-transform-react-jsx': ^7.17.3
   '@babel/traverse': ^7.17.10
   '@babel/types': ^7.17.10
   '@commitlint/cli': ^15.0.0
@@ -27,8 +25,6 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.17.10
-  '@babel/parser': 7.17.10
-  '@babel/plugin-transform-react-jsx': 7.17.3_@babel+core@7.17.10
   '@babel/traverse': 7.17.10
   '@babel/types': 7.17.10
   unplugin: 0.6.2_vite@2.9.8
@@ -106,6 +102,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.17.10
+    dev: true
 
   /@babel/helper-compilation-targets/7.17.10_@babel+core@7.17.10:
     resolution: {integrity: sha512-gh3RxjWbauw/dFiU/7whjd0qN9K6nPJMqe6+Er7rOavFh0CQUSwhAE3IcTho2rywPJFxej6TUUHDkWcYI6gGqQ==}
@@ -162,6 +159,7 @@ packages:
   /@babel/helper-plugin-utils/7.16.7:
     resolution: {integrity: sha512-Qg3Nk7ZxpgMrsox6HreY1ZNKdBq7K72tDSliA6dCl5f007jR4ne8iD5UzuNnCJH2xBf2BEEVGr+/OL6Gdp7RxA==}
     engines: {node: '>=6.9.0'}
+    dev: true
 
   /@babel/helper-simple-access/7.17.7:
     resolution: {integrity: sha512-txyMCGroZ96i+Pxr3Je3lzEJjqwaRC9buMUgtomcrLe5Nd0+fk1h0LLA+ixUF5OW7AhHuQ7Es1WcQJZmZsz2XA==}
@@ -259,6 +257,7 @@ packages:
     dependencies:
       '@babel/core': 7.17.10
       '@babel/helper-plugin-utils': 7.16.7
+    dev: true
 
   /@babel/plugin-syntax-logical-assignment-operators/7.10.4_@babel+core@7.17.10:
     resolution: {integrity: sha512-d8waShlpFDinQ5MtvGU9xDAOzKH47+FFoney2baFIoMr952hKOLp1HR7VszoZvOsV/4+RRszNY7D17ba0te0ig==}
@@ -376,6 +375,7 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
       '@babel/plugin-syntax-jsx': 7.16.7_@babel+core@7.17.10
       '@babel/types': 7.17.10
+    dev: true
 
   /@babel/template/7.16.7:
     resolution: {integrity: sha512-I8j/x8kHUrbYRTUxXrrMbfCa7jxkE7tZre39x3kjr9hvI82cK1FfqLygotcWN5kdPGWcLdWMHpSBavse5tWw3w==}

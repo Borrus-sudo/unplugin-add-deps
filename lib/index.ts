@@ -1,13 +1,12 @@
 import { transform } from "@babel/core";
-import { TraverseOptions } from "@babel/traverse";
 import * as t from "@babel/types";
 import { createUnplugin } from "unplugin";
 
-function isReactComponent(id: string) {
+function isReactComponent(id) {
   return id.charAt(0).toUpperCase() === id.charAt(0);
 }
 
-function isReactIdentifierRecordHook(id: string) {
+function isReactIdentifierRecordHook(id) {
   return [
     "useState",
     "useReducer",
@@ -18,7 +17,7 @@ function isReactIdentifierRecordHook(id: string) {
   ].includes(id);
 }
 
-function isReactAddDepHook(id: string) {
+function isReactAddDepHook(id) {
   return [
     "useEffect",
     "useCallback",
@@ -52,7 +51,7 @@ function addDepsToHook(node, identifiers) {
 }
 
 function returnComponentVisitor(props) {
-  const identifiers: t.Identifier[] = [...props];
+  const identifiers = [...props];
   return {
     VariableDeclarator(path) {
       if (
@@ -64,7 +63,7 @@ function returnComponentVisitor(props) {
         } = path.node.init;
         if (isReactIdentifierRecordHook(name)) {
           if (t.isArrayPattern(path.node.id)) {
-            identifiers.push(...(path.node.id.elements as t.Identifier[]));
+            identifiers.push(...path.node.id.elements);
           }
         }
       }
@@ -80,7 +79,7 @@ function returnComponentVisitor(props) {
         }
       }
     },
-  } as TraverseOptions<unknown>;
+  };
 }
 
 export const createBabelPlugin = () => {
@@ -99,8 +98,6 @@ export const createBabelPlugin = () => {
               },
             });
           });
-
-          console.log(props);
           path.traverse(returnComponentVisitor(props));
         }
       },
@@ -114,11 +111,10 @@ const plugins = createUnplugin((opts) => {
     transformInclude(id) {
       return /\.(j|t)sx$/.test(id);
     },
-    transform(code: string) {
+    transform(code) {
       const { code: transformedCode } = transform(code, {
         plugins: [createBabelPlugin()],
       });
-      console.log(transformedCode);
       return transformedCode;
     },
   };
