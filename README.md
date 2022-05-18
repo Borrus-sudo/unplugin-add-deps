@@ -90,9 +90,9 @@ export default defineConfig({
   }
 
   /* Wrong Way ❎*/
-  function App({ hello }) {
+  function App(props) {
     useEffect(() => {
-      console.log(hello);
+      console.log(props.hello);
     }, []);
     return (
       <div className="App">
